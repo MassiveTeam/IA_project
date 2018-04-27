@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,8 +18,12 @@ namespace IA.Models
         public int TeamID { get; set; }
         public int ProjectId { get; set; }  
         public string Description { get; set; }  
-        public string Tools { get; set; }  
+        public string Tools { get; set; }
+        [DefaultValue(0)]
         public int State { get; set; }  
-        public string ProjectName { get; set; }  
+        public string ProjectName { get; set; }
+        [ForeignKey("ProjectId")]
+        public ProfessorLog professor { get; set; }
+
     }
 }

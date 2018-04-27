@@ -57,6 +57,4 @@ C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\bin\Microsoft.AspNe
 C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.Migrations.InitialAdmin.resources
 C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.csproj.GenerateResource.cache
-C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.Migrations.mDataBase.resources
-C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.Migrations.mDataBase1.resources
-C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.Migrations.mDataBase2.resources
+C:\Users\minafaw\Documents\Visual Studio 2017\Projects\IA\IA\obj\Debug\IA.Migrations.mDatabase.resources

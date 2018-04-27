@@ -118,17 +118,9 @@
     <Compile Include="Migrations\201804241405210_InitialAdmin.Designer.cs">
       <DependentUpon>201804241405210_InitialAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804250021423_mDataBase.cs" />
-    <Compile Include="Migrations\201804250021423_mDataBase.Designer.cs">
-      <DependentUpon>201804250021423_mDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804252205190_mDataBase1.cs" />
-    <Compile Include="Migrations\201804252205190_mDataBase1.Designer.cs">
-      <DependentUpon>201804252205190_mDataBase1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804261637033_mDataBase2.cs" />
-    <Compile Include="Migrations\201804261637033_mDataBase2.Designer.cs">
-      <DependentUpon>201804261637033_mDataBase2.cs</DependentUpon>
+    <Compile Include="Migrations\201804262325461_mDatabase.cs" />
+    <Compile Include="Migrations\201804262325461_mDatabase.Designer.cs">
+      <DependentUpon>201804262325461_mDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -142,6 +134,7 @@
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TeamWithIdea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,14 +155,8 @@
     <EmbeddedResource Include="Migrations\201804241405210_InitialAdmin.resx">
       <DependentUpon>201804241405210_InitialAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804250021423_mDataBase.resx">
-      <DependentUpon>201804250021423_mDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804252205190_mDataBase1.resx">
-      <DependentUpon>201804252205190_mDataBase1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804261637033_mDataBase2.resx">
-      <DependentUpon>201804261637033_mDataBase2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804262325461_mDatabase.resx">
+      <DependentUpon>201804262325461_mDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
