@@ -9,6 +9,8 @@ namespace IA.Models
 {
     public class Student : Person
     {
+        [Key]
+        public int Id { get; set; }
         public virtual ICollection<MemberId> memberIds { get; set; }
         public virtual ICollection<Team> Team { get; set; }
 

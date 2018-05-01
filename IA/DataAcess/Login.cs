@@ -7,18 +7,17 @@ namespace IA.DataAcess
     {
         public ApplicationContextDb db = new ApplicationContextDb();
 
-        public Person LoginMethod(string Email , string Password , string TabeName) {
-            Person user = new Person();
-            switch (TabeName) {
-                case "Student":
-                    user = db.student.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
-                    break;
-                case "Professior":
-                    user = db.professiors.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
-                    break;
-                case "Admin":
-                    user = db.Admins.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
-                    break;
+        public Person LoginMethod(string Email , string Password) {
+            Person user = null;
+            if (db.student.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault() != null) {
+                user = new Student();
+                user = db.student.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
+            } else if (db.professiors.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault() !=null) {
+                user = new Professior();
+                user = db.professiors.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
+            }else if(db.Admins.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault() !=null) {
+                user = new Admin();
+                user = db.Admins.Where(x => x.Password == Password && x.Email == Email).FirstOrDefault();
             }
 
             return user; 

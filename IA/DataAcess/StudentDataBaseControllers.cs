@@ -58,6 +58,7 @@ namespace IA.DataAcess
 
             }
             ProfId.FirstProfId = professiorsIds[0];
+            ProfId.ProjectId = team.LeaderId;
             try
             {
                 ProfId.SecondProfId = professiorsIds[1];
@@ -65,7 +66,11 @@ namespace IA.DataAcess
             }
             catch (Exception e) { }
             db.teams.Add(team);
+            db.SaveChanges();
+
             db.memberIds.Add(memberId);
+            db.SaveChanges();
+
             db.profIds.Add(ProfId);
             db.SaveChanges();
 

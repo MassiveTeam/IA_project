@@ -10,8 +10,10 @@ namespace IA.DataAcess
             db.professiors.Add(professior);
             db.SaveChanges();
         }
-        public void RemoveProfessor(Professior professior)
+        public void RemoveProfessor(int id )
         {
+            Professior professior = new Professior();
+            professior = db.professiors.Where(x => x.Id == id).FirstOrDefault();
             db.professiors.Remove(professior);
             db.SaveChanges();
         }
