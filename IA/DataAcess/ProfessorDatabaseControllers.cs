@@ -30,17 +30,24 @@ namespace IA.DataAcess
             for (int i = 0; i < FinalTeam.Count(); i++)
             {
                 Student student = new Student();
-                student = db.student.Where(x => x.Id == FinalTeam[i].LeaderId).FirstOrDefault();
+                var id = FinalTeam[i].LeaderId;
+                student = db.student.Where(x => x.Id == id).First();
                 LeaderNames.Add(student.UserName);
             }
+            TeamWithIdea teamWithIdea; 
             for (int i = 0; i < FinalTeam.Count(); i++)
             {
-                data[i].TeamLeaderName = LeaderNames[i];
-                data[i].LeaderId = FinalTeam[i].LeaderId;
-                data[i].ProjectName = FinalTeam[i].ProjectName;
-                data[i].Description = FinalTeam[i].Description;
-                data[i].Tools = FinalTeam[i].Tools;
-                data[i].TeamID = FinalTeam[i].TeamID;
+                teamWithIdea = new TeamWithIdea()
+                {
+                    TeamLeaderName = LeaderNames[i],
+                    LeaderId = FinalTeam[i].LeaderId,
+                    ProjectName = FinalTeam[i].ProjectName,
+                    Description = FinalTeam[i].Description,
+                    Tools = FinalTeam[i].Tools,
+                    TeamID = FinalTeam[i].TeamID
+                };
+
+                data.Add(teamWithIdea);
             }
                 return data;
            

@@ -13,7 +13,7 @@ namespace IA.DataAcess
             db.SaveChanges();
         }
 
-        public IEnumerable<Student> getStudents() => db.student.ToList();
+        public IEnumerable<Student> getStudents() => db.student?.ToList();
 
         public void InsertReport(Report report)
         {
@@ -32,11 +32,12 @@ namespace IA.DataAcess
 
             team.Description = idea.Description;
             team.LeaderId = idea.TeamLeaderId;
-            team.ProjectId = idea.TeamLeaderId;
+            team.ProjectId = idea.TeamLeaderId + 2015 ;
             team.Tools = idea.Tools;
             team.ProjectName = idea.IdeaName;
             team.State = State;
-            foreach(Student x in idea.students )
+            
+            foreach(Student x in idea.students)
             {
                 StudentsIds.Add(x.Id);
             }
@@ -53,27 +54,29 @@ namespace IA.DataAcess
                 memberId.FourthMemberId = StudentsIds[3];
                 memberId.FifthMemberId = StudentsIds[4];
             }
-            catch (Exception e )
-            {
-
-            }
+            catch (Exception e ) { }
             ProfId.FirstProfId = professiorsIds[0];
-            ProfId.ProjectId = team.LeaderId;
+            ProfId.ProjectId = team.ProjectId;
             try
             {
                 ProfId.SecondProfId = professiorsIds[1];
                 ProfId.ThridProfId = professiorsIds[2];
             }
             catch (Exception e) { }
-            db.teams.Add(team);
-            db.SaveChanges();
 
+
+            ProfessorLog professorLog = new ProfessorLog();
+
+            professorLog.statues = State; 
+            professorLog.ProfId = professiorsIds[0]; 
+            professorLog.ProjectId = team.ProjectId;
+
+            db.professorLogs.Add(professorLog);
             db.memberIds.Add(memberId);
-            db.SaveChanges();
-
             db.profIds.Add(ProfId);
-            db.SaveChanges();
+            db.teams.Add(team);
 
+            db.SaveChanges();
         }
 
 

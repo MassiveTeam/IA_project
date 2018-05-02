@@ -10,13 +10,13 @@ namespace IA.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int? ProfId { get; set; }
-        [ForeignKey("ProfId")]
-        public Professior professior { get; set; }
+       // [ForeignKey("ProfId")]
+       // public Professior professior { get; set; }
         [DefaultValue(0)]
         public int statues { get; set; }
         public int ProjectId { get; set; }
         public virtual ICollection<MemberId> memberIds { get; set; }
-        public virtual ICollection<ProfId> profIds { get; set; }
+        //public virtual ICollection<ProfId> profIds { get; set; }
         public virtual ICollection<Team> Teams { get; set; }
 
     }

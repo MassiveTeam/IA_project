@@ -18,9 +18,9 @@ namespace IA.Models
         public int? FifthMemberId { get; set; }
 
         public int ProjectId { get; set; }
-        [ForeignKey("ProjectId")]
+       // [ForeignKey("ProjectId")]
 
-        public ProfessorLog ProfessorLog { get; set; }
+        //public ProfessorLog ProfessorLog { get; set; }
 
     }
 }

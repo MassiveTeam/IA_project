@@ -22,7 +22,6 @@ namespace IA.Models
         [DefaultValue(0)]
         public int State { get; set; }  
         public string ProjectName { get; set; }
-        [ForeignKey("ProjectId")]
         public ProfessorLog professor { get; set; }
 
     }

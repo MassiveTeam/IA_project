@@ -9,6 +9,7 @@ namespace IA.Controllers
     {
         DataAcess.StudentDataBaseControllers studentDataBase = new DataAcess.StudentDataBaseControllers();
         DataAcess.AdminDatabaseControllers adminDatabase = new DataAcess.AdminDatabaseControllers();
+        DataAcess.ProfessorDatabaseControllers ProfessorDatabase = new DataAcess.ProfessorDatabaseControllers();
 
         // GET: Hoem
         public ActionResult Index()
@@ -90,5 +91,11 @@ namespace IA.Controllers
             studentDataBase.InsertIdea(idea, 0); 
         }
 
+        public void GetStudentWithIdeas() {
+           List<TeamWithIdea> teamWithIdea = new List<TeamWithIdea>();
+            teamWithIdea = ProfessorDatabase.GetPenddingStudent(1).ToList();
+            Response.Write(teamWithIdea.ToList());
         }
+
     }
+}
